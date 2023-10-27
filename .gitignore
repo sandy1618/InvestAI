@@ -19,6 +19,9 @@ env/
 .env/
 .venv
 
+# environment variables. 
+.env
+
 # Ignore log files
 *.log
 

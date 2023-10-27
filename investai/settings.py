@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,8 +38,25 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'landing_page'
+    'landing_page',
+    'storages'
 ]
+
+DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+
+# from decouple import config
+
+# AZURE_ACCOUNT_NAME = config('AZURE_ACCOUNT_NAME')
+# AZURE_ACCOUNT_KEY = config('AZURE_ACCOUNT_KEY')
+# AZURE_CONTAINER = config('AZURE_CONTAINER')
+
+import os
+
+AZURE_ACCOUNT_NAME = os.environ.get('AZURE_ACCOUNT_NAME')
+AZURE_ACCOUNT_KEY = os.environ.get('AZURE_ACCOUNT_KEY')
+AZURE_CONTAINER = os.environ.get('AZURE_CONTAINER')
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
