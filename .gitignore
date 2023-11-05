@@ -4,8 +4,13 @@ bin
 lib
 include
 
+## Certificates 
+certificates
+
 #runtime generated static files
 staticfiles
+
+
 
 # Ignore compiled Python files
 __pycache__/
